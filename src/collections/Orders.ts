@@ -1,17 +1,21 @@
 import { CollectionConfig } from "payload/types";
+import { isAdminOrHasOrderAccess } from "../access/isAdminOrHasOrderAccess";
+import { isAdmin } from "../access/isAdmin";
 
 const Orders: CollectionConfig = {
     slug: "orders",
     admin: {
-        useAsTitle: "email",
+        useAsTitle: "name",
     },
     access: {
-        read: () => true,
+        read: isAdminOrHasOrderAccess('id'),
+        create: isAdmin,
     },
     fields: [
         {
-            name: "email",
+            name: "name",
             type: "text",
+            defaultValue: "New Test Order",
         }
     ]
 };
