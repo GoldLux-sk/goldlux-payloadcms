@@ -6,7 +6,7 @@ import Orders from './collections/Orders';
 
 export default buildConfig({
   serverURL: 'http://localhost:3000',
-  cors: ("*"),
+  cors: ['http://localhost:3000', 'https://adamdemian1-gmailcom-goldlux-payloadcms.payloadcms.app'],
   admin: {
     user: Users.slug,
   },
