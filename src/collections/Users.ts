@@ -62,6 +62,22 @@ const Users: CollectionConfig = {
       ],
     },
     {
+      name: 'hourlyRate',
+      label: 'Hodinová sadzba',
+      type: 'number',
+      admin: {
+        condition: (data) => {
+          if (data.role === 'cleaner') {
+            return true;
+          } else {
+            return false;
+          }
+        },
+        width: '50%',
+        placeholder: '€',
+      }
+    },
+    {
       name: 'orders',
       label: 'Objednávky',
       type: 'relationship',
