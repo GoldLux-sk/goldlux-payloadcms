@@ -54,15 +54,114 @@ const Orders: CollectionConfig = {
             ]
         },
         {
-            name: 'date',
-            label: 'Datum',
-            type: 'date',
-            required: true,
-            admin: {
-                date: {
-                    pickerAppearance: 'dayOnly',
-                    displayFormat: 'dd.MM.yyyy',
+            type: 'row',
+            fields: [
+                {
+                    name: 'start_end_date',
+                    label: 'Dátum',
+                    type: 'date',
+                    required: true,
+                    admin: {
+                        date: {
+                            pickerAppearance: 'dayOnly',
+                            displayFormat: 'dd.MM.yyyy',
+                        },
+                        condition: (data) => {
+                            if (data.status !== 'template') {
+                                return true;
+                            } else {
+                                return false;
+                            }
+                        }
+                    }
                 },
+                {
+                    name: 'start_date',
+                    label: 'Začiatočný dátum',
+                    type: 'date',
+                    required: true,
+                    admin: {
+                        date: {
+                            pickerAppearance: 'dayOnly',
+                            displayFormat: 'dd.MM.yyyy',
+                        },
+                        condition: (data) => {
+                            if (data.status === 'template') {
+                                return true;
+                            } else {
+                                return false;
+                            }
+                        }
+                    }
+                },
+                {
+                    name: 'end_date',
+                    label: 'Konečný dátum',
+                    type: 'date',
+                    required: true,
+                    admin: {
+                        date: {
+                            pickerAppearance: 'dayOnly',
+                            displayFormat: 'dd.MM.yyyy',
+                        },
+                        condition: (data) => {
+                            if (data.status === 'template') {
+                                return true;
+                            } else {
+                                return false;
+                            }
+                        }
+                    }
+                },
+            ]
+        },
+        {
+            type: 'row',
+            fields: [
+                {
+                    name: 'monday',
+                    type: 'checkbox',
+                    label: 'Pondelok',
+                },
+                {
+                    name: 'tuesday',
+                    type: 'checkbox',
+                    label: 'Utorok',
+                },
+                {
+                    name: 'wednesday',
+                    type: 'checkbox',
+                    label: 'Streda',
+                },
+                {
+                    name: 'thrursday',
+                    type: 'checkbox',
+                    label: 'Stvrtok',
+                },
+                {
+                    name: 'friday',
+                    type: 'checkbox',
+                    label: 'Piatok',
+                },
+                {
+                    name: 'saturday',
+                    type: 'checkbox',
+                    label: 'Sobota',
+                },
+                {
+                    name: 'sunday',
+                    type: 'checkbox',
+                    label: 'Nedela',
+                },
+            ],
+            admin: {
+                condition: (data) => {
+                    if (data.status === 'template') {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
             }
         },
         {
@@ -107,6 +206,7 @@ const Orders: CollectionConfig = {
                 },
             ]
         },
+
         {
             type: 'row',
             fields: [
