@@ -32,7 +32,7 @@ const Users: CollectionConfig = {
           type: "text",
           admin: {
             width: "50%",
-          }
+          },
         },
       ],
     },

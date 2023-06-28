@@ -20,7 +20,7 @@ const Orders: CollectionConfig = {
                 //     label: 'Zakaznik',
                 //     type: 'relationship',
                 //     relationTo: 'users',
-                //     hasMany: false,
+                //     hasMany: true,
                 //     required: true,
                 // },
                 {
@@ -240,7 +240,7 @@ const Orders: CollectionConfig = {
                     type: 'number',
                     max: 24,
                     min: 0,
-                    required: true,
+                    required: false,
                     admin: {
                         width: '33%'
                     },
