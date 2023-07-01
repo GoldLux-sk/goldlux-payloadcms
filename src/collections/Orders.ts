@@ -15,14 +15,14 @@ const Orders: CollectionConfig = {
         {
             type: 'row',
             fields: [
-                // {
-                //     name: 'customer',
-                //     label: 'Zakaznik',
-                //     type: 'relationship',
-                //     relationTo: 'users',
-                //     hasMany: true,
-                //     required: true,
-                // },
+                {
+                    name: 'customer',
+                    label: 'Zakaznik',
+                    type: 'relationship',
+                    relationTo: 'users',
+                    hasMany: true,
+                    required: true,
+                },
                 {
                     name: 'status',
                     label: 'Stav',
