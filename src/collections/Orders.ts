@@ -8,7 +8,7 @@ const Orders: CollectionConfig = {
         useAsTitle: "name",
     },
     access: {
-        read: isAdminOrHasOrderAccess('id'),
+        read: isAdminOrHasOrderAccess(),
         create: isAdmin,
     },
     fields: [
@@ -20,8 +20,8 @@ const Orders: CollectionConfig = {
                     label: 'Zakaznik',
                     type: 'relationship',
                     relationTo: 'users',
-                    hasMany: true,
-                    required: true,
+                    hasMany: false,
+                    required: false,
                 },
                 {
                     name: 'status',
