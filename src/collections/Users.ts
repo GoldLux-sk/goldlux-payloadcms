@@ -76,13 +76,6 @@ const Users: CollectionConfig = {
         placeholder: '€',
       }
     },
-    {
-      name: 'orders',
-      label: 'Objednávky',
-      type: 'relationship',
-      relationTo: 'orders',
-      hasMany: true,
-    },
   ],
 };
 

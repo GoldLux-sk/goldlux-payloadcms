@@ -19,7 +19,7 @@ export const isAdminOrHasOrderAccess = (): Access => async ({ req: { user, } }) 
                         equals: user.id
                     }
                 },
-                depth: 1,
+                depth: 0,
             });
 
 
