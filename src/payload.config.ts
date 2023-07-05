@@ -8,7 +8,7 @@ export default buildConfig({
   cors: [
     'http://localhost:3000',
     'http://localhost:3001',
-    'https://beautiful-brigadeiros-64c3aa.netlify.app',
+    'https://goldlux-next-dep.vercel.app',
     'https://goldlux-payloadcms.payloadcms.app',
     process.env.NEXT_PUBLIC_BASE_DNS || 'http://localhost:3001',
 
@@ -16,7 +16,7 @@ export default buildConfig({
   csrf: [
     'http://localhost:3000',
     'http://localhost:3001',
-    'https://beautiful-brigadeiros-64c3aa.netlify.app',
+    'https://goldlux-next-dep.vercel.app',
     'https://goldlux-payloadcms.payloadcms.app',
     process.env.NEXT_PUBLIC_BASE_DNS || 'http://localhost:3001',
   ],
