@@ -8,8 +8,9 @@ export default buildConfig({
   cors: [
     'http://localhost:3000',
     'http://localhost:3001',
+    process.env.NEXT_PUBLIC_BASE_DNS || 'http://localhost:3001',
     'https://adamdemian1-gmailcom-goldlux-payloadcms.payloadcms.app',
-    'https://goldlux-nextjs.vercel.app'
+    'https://goldlux-nextjs.vercel.app',
   ],
   csrf: [
     'https://adamdemian1-gmailcom-goldlux-payloadcms.payloadcms.app',
