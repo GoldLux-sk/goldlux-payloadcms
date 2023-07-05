@@ -16,6 +16,7 @@ export default buildConfig({
     'https://adamdemian1-gmailcom-goldlux-payloadcms.payloadcms.app',
     'http://localhost:3000',
     'http://localhost:3001',
+    process.env.NEXT_PUBLIC_BASE_DNS || 'http://localhost:3001',
     'https://goldlux-nextjs.vercel.app'
   ],
   admin: {
