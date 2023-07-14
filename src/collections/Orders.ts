@@ -122,36 +122,43 @@ const Orders: CollectionConfig = {
                     name: 'monday',
                     type: 'checkbox',
                     label: 'Pondelok',
+                    defaultValue: false
                 },
                 {
                     name: 'tuesday',
                     type: 'checkbox',
                     label: 'Utorok',
+                    defaultValue: false
                 },
                 {
                     name: 'wednesday',
                     type: 'checkbox',
                     label: 'Streda',
+                    defaultValue: false
                 },
                 {
                     name: 'thrursday',
                     type: 'checkbox',
                     label: 'Stvrtok',
+                    defaultValue: false
                 },
                 {
                     name: 'friday',
                     type: 'checkbox',
                     label: 'Piatok',
+                    defaultValue: false
                 },
                 {
                     name: 'saturday',
                     type: 'checkbox',
                     label: 'Sobota',
+                    defaultValue: false
                 },
                 {
                     name: 'sunday',
                     type: 'checkbox',
                     label: 'Nedela',
+                    defaultValue: false
                 },
             ],
             admin: {
