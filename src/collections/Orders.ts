@@ -238,7 +238,6 @@ const Orders: CollectionConfig = {
                     name: 'real_duration_h',
                     label: 'Realny cas v hodinach',
                     type: 'number',
-                    max: 24,
                     min: 0,
                     required: false,
                     admin: {
@@ -255,7 +254,14 @@ const Orders: CollectionConfig = {
                 width: '50%',
             },
         },
-    ]
+        {
+            name: 'timer_state',
+            type: 'json',
+            admin: {
+                hidden: true,
+            }
+        }
+    ],
 };
 
 export default Orders;
