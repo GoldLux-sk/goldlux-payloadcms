@@ -11,7 +11,7 @@ export default buildConfig({
     'https://beautiful-brigadeiros-64c3aa.netlify.app',
     'https://goldlux-payloadcms.payloadcms.app',
     'https://goldlux-payloadcms.payloadcms.app',
-    process.env.NEXT_PUBLIC_BASE_DNS || 'http://localhost:3001',
+    process.env.PAYLOAD_PUBLIC_NEXT_BASE_DNS || 'http://localhost:3001',
 
   ],
   csrf: [
@@ -20,7 +20,7 @@ export default buildConfig({
     'https://beautiful-brigadeiros-64c3aa.netlify.app',
     'https://goldlux-payloadcms.payloadcms.app',
     'https://goldlux-payloadcms.payloadcms.app',
-    process.env.NEXT_PUBLIC_BASE_DNS || 'http://localhost:3001',
+    process.env.PAYLOAD_PUBLIC_NEXT_BASE_DNS || 'http://localhost:3001',
   ],
   admin: {
     user: Users.slug,
