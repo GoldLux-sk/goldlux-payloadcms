@@ -7,8 +7,7 @@ const Users: CollectionConfig = {
   auth: {
     depth: 0,
     cookies: {
-      sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
-      secure: process.env.NODE_ENV === "production",
+      domain: process.env.FRONTEND_URL ? 'liucoai.sk' : undefined,
     }
   },
   admin: {
