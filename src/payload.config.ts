@@ -19,7 +19,7 @@ export default buildConfig({
     process.env.PAYLOAD_PUBLIC_NEXT_BASE_DNS || 'http://localhost:3001',
     process.env.PAYLOAD_PUBLIC_BASE_DNS || 'http://localhost:3000',
     'http://localhost:3000',
-    'netlify.app'
+    'https://goldlux.netlify.app'
   ],
   admin: {
     user: Users.slug,
