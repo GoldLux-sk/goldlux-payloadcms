@@ -6,6 +6,10 @@ const Users: CollectionConfig = {
   slug: 'users',
   auth: {
     depth: 0,
+    cookies: {
+      sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
+      secure: process.env.NODE_ENV === "production",
+    }
   },
   admin: {
     useAsTitle: 'email',
