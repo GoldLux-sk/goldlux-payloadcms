@@ -10,16 +10,12 @@ dotenv.config({
 
 export default buildConfig({
   serverURL: process.env.PAYLOAD_PUBLIC_BASE_DNS || 'http://localhost:3000',
-  rateLimit: {
-    trustProxy: true,
-  },
   cors: [
-    process.env.PAYLOAD_PUBLIC_NEXT_BASE_DNS || 'http://localhost:3001',
-  ],
+    process.env.FRONTEND_URL || 'http://localhost:3001',
+  ].filter(Boolean),
   csrf: [
-    process.env.PAYLOAD_PUBLIC_NEXT_BASE_DNS || 'http://localhost:3001',
-    'https://liucoai.com'
-  ],
+    process.env.FRONTEND_URL || 'http://localhost:3001',
+  ].filter(Boolean),
   admin: {
     user: Users.slug,
   },
@@ -35,6 +31,6 @@ export default buildConfig({
   },
   onInit: async () => {
     console.log(`Payload Admin URL: ${process.env.PAYLOAD_PUBLIC_BASE_DNS}/admin`)
-    console.log(`Public Frontend URL: ${process.env.PAYLOAD_PUBLIC_NEXT_BASE_DNS}`)
+    console.log(`Public Frontend URL: ${process.env.FRONTEND_URL}`)
   }
 });
