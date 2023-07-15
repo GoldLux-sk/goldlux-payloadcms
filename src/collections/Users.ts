@@ -7,7 +7,9 @@ const Users: CollectionConfig = {
   auth: {
     depth: 0,
     cookies: {
-      domain: 'liucoai.com',
+      sameSite: 'none',
+      secure: true,
+      domain: process.env.COOKIE_DOMAIN,
     }
   },
   admin: {
