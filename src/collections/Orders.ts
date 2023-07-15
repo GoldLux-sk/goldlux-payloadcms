@@ -30,23 +30,23 @@ const Orders: CollectionConfig = {
                     required: true,
                     options: [
                         {
-                            label: 'Started',
+                            label: 'Začatá',
                             value: 'started',
                         },
                         {
-                            label: 'Planned',
+                            label: 'Plánovaná',
                             value: 'planned',
                         },
                         {
-                            label: 'Ended',
+                            label: 'Skončená',
                             value: 'ended',
                         },
                         {
-                            label: 'Cancelled',
+                            label: 'Zrušená',
                             value: 'cancelled',
                         },
                         {
-                            label: 'Template',
+                            label: 'Opakujúca sa',
                             value: 'template',
                         },
                     ],
