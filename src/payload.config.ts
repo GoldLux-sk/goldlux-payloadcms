@@ -7,10 +7,11 @@ export default buildConfig({
   serverURL: process.env.PAYLOAD_PUBLIC_BASE_DNS || 'http://localhost:3000',
   cors: [
     process.env.PAYLOAD_PUBLIC_NEXT_BASE_DNS || 'http://localhost:3001',
-
+    process.env.PAYLOAD_PUBLIC_BASE_DNS || 'http://localhost:3000',
   ],
   csrf: [
     process.env.PAYLOAD_PUBLIC_NEXT_BASE_DNS || 'http://localhost:3001',
+    process.env.PAYLOAD_PUBLIC_BASE_DNS || 'http://localhost:3000',
   ],
   admin: {
     user: Users.slug,
