@@ -15,14 +15,10 @@ export default buildConfig({
   },
   cors: [
     process.env.PAYLOAD_PUBLIC_NEXT_BASE_DNS || 'http://localhost:3001',
-    process.env.PAYLOAD_PUBLIC_BASE_DNS || 'http://localhost:3000',
-    'http://localhost:3000',
   ],
   csrf: [
     process.env.PAYLOAD_PUBLIC_NEXT_BASE_DNS || 'http://localhost:3001',
-    process.env.PAYLOAD_PUBLIC_BASE_DNS || 'http://localhost:3000',
-    'http://localhost:3000',
-    'https://goldlux.netlify.app'
+    'https://liucoai.com'
   ],
   admin: {
     user: Users.slug,
