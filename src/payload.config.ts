@@ -6,20 +6,10 @@ import Orders from './collections/Orders';
 export default buildConfig({
   serverURL: process.env.PAYLOAD_PUBLIC_BASE_DNS || 'http://localhost:3000',
   cors: [
-    'http://localhost:3000',
-    'http://localhost:3001',
-    'https://beautiful-brigadeiros-64c3aa.netlify.app',
-    'https://goldlux-payloadcms.payloadcms.app',
-    'https://goldlux-payloadcms.payloadcms.app',
     process.env.PAYLOAD_PUBLIC_NEXT_BASE_DNS || 'http://localhost:3001',
 
   ],
   csrf: [
-    'http://localhost:3000',
-    'http://localhost:3001',
-    'https://beautiful-brigadeiros-64c3aa.netlify.app',
-    'https://goldlux-payloadcms.payloadcms.app',
-    'https://goldlux-payloadcms.payloadcms.app',
     process.env.PAYLOAD_PUBLIC_NEXT_BASE_DNS || 'http://localhost:3001',
   ],
   admin: {
