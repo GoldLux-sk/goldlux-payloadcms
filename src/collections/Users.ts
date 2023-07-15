@@ -9,6 +9,7 @@ const Users: CollectionConfig = {
     cookies: {
       sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
       secure: process.env.NODE_ENV === "production",
+      domain: process.env.NODE_ENV === "production" ? '.netlify.app' : undefined,
     }
   },
   admin: {
