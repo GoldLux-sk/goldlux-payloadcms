@@ -1,0 +1,12 @@
+@import '~payload/scss';
+
+.dashboard__card-list {
+    .card {
+        background-color: #007AFF;
+        transition: 0.3s ease-in-out;
+    }
+
+    .card:hover {
+        background-color: #1f8bff;
+    }
+}
