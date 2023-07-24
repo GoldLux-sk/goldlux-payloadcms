@@ -1,12 +1,18 @@
 @import '~payload/scss';
 
 .dashboard__card-list {
-    .card {
-        background-color: #007AFF;
-        transition: 0.3s ease-in-out;
+
+    .btn__icon {
+        border-color: #007AFF;
+        transition: 0.1s;
     }
 
-    .card:hover {
-        background-color: #1f8bff;
+    .btn__icon:hover {
+        border-color: #fff;
+    }
+
+    .icon--plus {
+        color: #007AFF;
+        transition: 1s;
     }
 }
