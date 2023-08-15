@@ -6,12 +6,10 @@ import Icon from './graphics/Icon';
 import Logo from './graphics/Logo';
 import dotenv from 'dotenv';
 
-dotenv.config({
-  path: path.resolve(__dirname, '../.env'),
-});
+dotenv.config();
 
 export default buildConfig({
-  serverURL: process.env.PAYLOAD_PUBLIC_BASE_DNS || 'http://localhost:3000',
+  serverURL: process.env.PAYLOAD_PUBLIC_BASE_DNS,
   cors: [
     process.env.FRONTEND_URL || 'http://localhost:3001',
   ].filter(Boolean),

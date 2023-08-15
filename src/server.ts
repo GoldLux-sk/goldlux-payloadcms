@@ -19,8 +19,7 @@ const start = async () => {
     express: app,
     onInit: async () => {
       payload.logger.info(`Payload Admin URL: ${payload.getAdminURL()}`)
-      payload.logger.info(`Public Frontend URL: ${process.env.PAYLOAD_PUBLIC_NEXT_BASE_DNS}`)
-      payload.logger.info(`Public Frontend URL: ${process.env.PAYLOAD_PUBLIC_BASE_DNS}`)
+      payload.logger.info(`Public Frontend URL: ${process.env.FRONTEND_URL}`)
     },
   })
 
