@@ -1,19 +1,20 @@
-import { CollectionConfig } from 'payload/types';
-import { isAdminOrSelf } from '../access/isAdminOrSelf';
-import { isAdmin, isAdminFieldLevel } from '../access/isAdmin';
+import { CollectionConfig } from "payload/types";
+import { isAdminOrSelf } from "../access/isAdminOrSelf";
+import { isAdmin, isAdminFieldLevel } from "../access/isAdmin";
+import { isAdminOrHasOrderAccess } from "../access/isAdminOrHasOrderAccess";
 
 const Users: CollectionConfig = {
-  slug: 'users',
+  slug: "users",
   auth: {
     depth: 0,
     cookies: {
-      sameSite: 'none',
+      sameSite: "none",
       secure: true,
       domain: process.env.COOKIE_DOMAIN,
-    }
+    },
   },
   admin: {
-    useAsTitle: 'email',
+    useAsTitle: "email",
   },
   access: {
     read: isAdminOrSelf,
@@ -29,7 +30,7 @@ const Users: CollectionConfig = {
           type: "text",
           admin: {
             width: "50%",
-          }
+          },
         },
         {
           name: "lastName",
@@ -42,44 +43,44 @@ const Users: CollectionConfig = {
       ],
     },
     {
-      name: 'role',
-      label: 'Rola',
+      name: "role",
+      label: "Rola",
       saveToJWT: true,
-      type: 'radio',
-      defaultValue: 'customer',
+      type: "radio",
+      defaultValue: "customer",
       access: {
         update: isAdminFieldLevel,
       },
       options: [
         {
-          label: 'Admin',
-          value: 'admin',
+          label: "Admin",
+          value: "admin",
         },
         {
-          label: 'Zákazník',
-          value: 'customer',
+          label: "Zákazník",
+          value: "customer",
         },
         {
-          label: 'Upratovač',
-          value: 'cleaner',
+          label: "Upratovač",
+          value: "cleaner",
         },
       ],
     },
     {
-      name: 'hourlyRate',
-      label: 'Hodinová sadzba',
-      type: 'number',
+      name: "hourlyRate",
+      label: "Hodinová sadzba",
+      type: "number",
       admin: {
         condition: (data) => {
-          if (data.role === 'cleaner') {
+          if (data.role === "cleaner") {
             return true;
           } else {
             return false;
           }
         },
-        width: '50%',
-        placeholder: '€',
-      }
+        width: "50%",
+        placeholder: "€",
+      },
     },
   ],
 };
