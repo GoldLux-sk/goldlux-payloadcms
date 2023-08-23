@@ -1,6 +1,43 @@
-import { CollectionConfig } from "payload/types";
+import { CollectionBeforeChangeHook, CollectionConfig } from "payload/types";
 import { isAdminOrHasOrderAccess } from "../access/isAdminOrHasOrderAccess";
 import { isAdmin } from "../access/isAdmin";
+import payload from "payload";
+
+const calculateRealDuration: CollectionBeforeChangeHook = ({
+  data,
+  originalDoc,
+}) => {
+  if (data.real_start && data.real_end) {
+    const start = new Date(data.real_start);
+    const end = new Date(data.real_end);
+    const duration = Math.abs(end.getTime() - start.getTime()) / 3600000; // Convert milliseconds to hours
+    return {
+      ...data,
+      real_duration_h: duration,
+    };
+  }
+  return data;
+};
+const calculateManualPrice: CollectionBeforeChangeHook = async ({
+  data,
+  originalDoc,
+}) => {
+  if (data.real_duration_h && data.cleaner) {
+    const cleaner = await payload.findByID({
+      collection: "users",
+      id: data.cleaner,
+    });
+
+    if (cleaner && cleaner.hourlyRate) {
+      const price = data.real_duration_h * cleaner.hourlyRate;
+      return {
+        ...data,
+        manual_price: price,
+      };
+    }
+  }
+  return data;
+};
 
 const Orders: CollectionConfig = {
   slug: "orders",
@@ -12,6 +49,9 @@ const Orders: CollectionConfig = {
     create: isAdmin,
     delete: isAdmin,
     update: isAdminOrHasOrderAccess(),
+  },
+  hooks: {
+    beforeChange: [calculateRealDuration, calculateManualPrice],
   },
   fields: [
     {
@@ -247,8 +287,8 @@ const Orders: CollectionConfig = {
           type: "date",
           admin: {
             date: {
-              pickerAppearance: "timeOnly",
-              displayFormat: "HH:mm",
+              pickerAppearance: "dayAndTime",
+              displayFormat: "dd.MM. HH:mm",
             },
             width: "33%",
           },
@@ -259,8 +299,8 @@ const Orders: CollectionConfig = {
           type: "date",
           admin: {
             date: {
-              pickerAppearance: "timeOnly",
-              displayFormat: "HH:mm",
+              pickerAppearance: "dayAndTime",
+              displayFormat: "dd.MM. HH:mm",
             },
             width: "33%",
           },

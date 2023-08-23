@@ -70,6 +70,7 @@ const Users: CollectionConfig = {
       name: "hourlyRate",
       label: "Hodinová sadzba",
       type: "number",
+      required: true,
       admin: {
         condition: (data) => {
           if (data.role === "cleaner") {
