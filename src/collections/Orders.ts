@@ -326,8 +326,8 @@ const Orders: CollectionConfig = {
       },
     },
     {
-      name: "timer_state",
-      type: "json",
+      name: "elapsed_time",
+      type: "number",
       admin: {
         hidden: true,
       },
