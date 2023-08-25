@@ -27,6 +27,9 @@ export default buildConfig({
       },
     },
   },
+  routes: {
+    admin: "/admin",
+  },
   collections: [Users, Orders],
   typescript: {
     outputFile: path.resolve(__dirname, "payload-types.ts"),
