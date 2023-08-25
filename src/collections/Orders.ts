@@ -325,6 +325,13 @@ const Orders: CollectionConfig = {
         width: "50%",
       },
     },
+    {
+      name: "timer_state",
+      type: "json",
+      admin: {
+        hidden: true,
+      },
+    },
   ],
 };
 
