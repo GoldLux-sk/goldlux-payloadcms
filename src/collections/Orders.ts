@@ -325,13 +325,6 @@ const Orders: CollectionConfig = {
         width: "50%",
       },
     },
-    {
-      name: "elapsed_time",
-      type: "number",
-      admin: {
-        hidden: true,
-      },
-    },
   ],
 };
 
